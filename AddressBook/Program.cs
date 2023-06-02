@@ -10,7 +10,7 @@
             while (flag)
             {
                 Console.WriteLine("\nPLease enter the choices");
-                Console.WriteLine("\n1. Add New Contact\n2. Display the contacts\n3. Exit");
+                Console.WriteLine("\n1. Add New Contact\n2. Display the contacts\n3. Edit Contacts\n4. Exit");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -21,6 +21,9 @@
                         addressBook.DisplayContacts();
                         break;
                     case 3:
+                        addressBook.EditContacts();
+                        break;
+                    case 4:
                         flag = false;
                         break;
                 }
