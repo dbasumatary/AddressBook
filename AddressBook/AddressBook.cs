@@ -111,5 +111,29 @@ namespace AddressBook
                 Console.WriteLine(contact);
             }
         }
+
+        public void DeleteContact()
+        {
+            Console.Write("Enter the first name whose contact you want to delete : ");
+            string inputName = Console.ReadLine();
+            inputName = inputName.ToLower();
+
+            foreach (Contacts contact in contactList)
+            {
+                if (inputName.Equals(contact.firstName.ToLower()))
+                {
+                    contactList.Remove(contact);
+                    Console.WriteLine("\nThe Contact is successfully removed");
+                    Console.WriteLine("\nThe new updated contact is:");
+                    DisplayContacts();
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine("\nContact with the given name not found");
+                    break;
+                }
+            }
+        }
     }
 }
